@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUMEHEAD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        .active {
+            color: #4CAF50;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 2rem;
+            padding-bottom: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px #000;
+        }
+
+        .steam-button {
+            display: inline-block;
+            background-color: #171a21;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            padding-bottom: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .steam-button:hover {
+            background-color: #66c0f4;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0rem auto;
+            padding: 0 1rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #presskit {
+            display: none;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .show {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('presskit')">Press Kit</a></li>
+        </ul>
+    </nav>
+
+    <div id="home">
+        <div class="hero">
+            <h1>FUMEHEAD</h1>
+            <p>Turn-based and worm-hunting RPG.</p>
+            <a href="https://store.steampowered.com/app/3194740/FUMEHEAD/" class="steam-button">
+                Wishlist on Steam
+            </a>
+            
+        </div>
+
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="presskit">
+        <h2>Press Kit</h2>
+        <p>Coming soon.</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('presskit').style.display = 'none';
+            
+            // Show selected section
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Update active nav link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.textContent.toLowerCase() === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
