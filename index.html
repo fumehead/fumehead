@@ -234,7 +234,7 @@
             padding: 2rem 1.5rem 1.5rem 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
 
         .show {
@@ -257,13 +257,31 @@
             opacity: 1;
         }
 
+        .press-hero {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 2rem auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .press-hero:hover {
+            transform: translateY(-4px);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 gap: 1rem;
             }
             
             nav a {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 padding: 0.3rem 0.6rem;
             }
 
@@ -276,24 +294,24 @@
             }
 
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
 
             h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             h3 {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
 
             p, li {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             #presskit {
                 padding: 1.5rem 0.75rem 0.75rem 0.75rem;
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .hero {
@@ -301,7 +319,7 @@
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .video-container {
@@ -349,6 +367,7 @@
 
     <div id="presskit">
         <div style="max-width: 800px; margin: 0 auto; padding: 1rem;">
+            <img src="vertical_capsule.png" alt="FUMEHEAD Game Capsule" class="press-hero" onclick="openModal(this.src)">
             <section>
                 <h3 style="color: #4CAF50; margin: 1rem 0 0.5rem 0;">OVERVIEW</h3>
                 <p style="margin-bottom: 1rem;">FUMEHEAD is a hero-focused turn-based RPG set in a post-abandonment underground world. Play as Jack & Ami as you try to eradicate the new alien disease that calls itself Slither.</p>
@@ -476,11 +495,7 @@
                     </div>
                     <!-- Screenshot 12 -->
                     <div style="aspect-ratio: 16/9; background: #333; border-radius: 4px; overflow: hidden; cursor: pointer;" onclick="openModal(this.querySelector('img').src)">
-                        <img src="library.png" alt="FUMEHEAD Screenshot 12" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <!-- Screenshot 13 -->
-                    <div style="aspect-ratio: 16/9; background: #333; border-radius: 4px; overflow: hidden; cursor: pointer;" onclick="openModal(this.querySelector('img').src)">
-                        <img src="layer1.png" alt="FUMEHEAD Screenshot 13" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="layer1.png" alt="FUMEHEAD Screenshot 12" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </section>
